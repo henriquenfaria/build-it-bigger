@@ -1,4 +1,4 @@
-package com.javajokes;
+package com.example.javajokesprovider;
 
 public class JokesProvider {
     private static String[] mJokes =

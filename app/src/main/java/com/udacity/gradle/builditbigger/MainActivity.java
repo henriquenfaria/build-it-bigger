@@ -7,7 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.javajokes.JokesProvider;
+import com.example.javajokesprovider.JokesProvider;
 
 
 public class MainActivity extends AppCompatActivity {
