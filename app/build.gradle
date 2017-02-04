@@ -27,5 +27,5 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.1.0'
     compile 'com.google.android.gms:play-services-ads:10.0.1'
-    compile project (':javaJokes');
+    compile project (':java-jokes-provider');
 }
