@@ -7,20 +7,28 @@
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:paddingRight="@dimen/activity_horizontal_margin"
                 android:paddingTop="@dimen/activity_vertical_margin"
-                tools:context=".fragment.MainActivityFragment">
-
-    <TextView
-        android:id="@+id/instructions_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/instructions"/>
+                tools:context=".fragment.JokeFragment">
 
     <Button
+        android:id="@+id/tellJokeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/instructions_text_view"
-        android:onClick="tellJoke"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:text="@string/button_text"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_below="@id/tellJokeButton"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/progressbar_margin"
+        android:visibility="gone"/>
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
@@ -30,6 +38,6 @@
         android:layout_centerHorizontal="true"
         android:visibility="gone"
         ads:adSize="BANNER"
-        ads:adUnitId="@string/banner_ad_unit_id"></com.google.android.gms.ads.AdView>
+        ads:adUnitId="@string/banner_ad_unit_id"/>
 
 </RelativeLayout>

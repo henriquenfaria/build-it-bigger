@@ -5,15 +5,15 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.example.androidjokesdisplayer.activity.JokesDisplayerActivity;
 import com.example.androidjokesdisplayer.utils.Constants;
 import com.udacity.gradle.builditbigger.R;
-import com.udacity.gradle.builditbigger.sync.EndpointsAsyncTask;
+import com.udacity.gradle.builditbigger.fragment.JokeFragment;
 
 
-public class MainActivity extends AppCompatActivity implements EndpointsAsyncTask.AsyncResponse {
+public class MainActivity extends AppCompatActivity
+        implements JokeFragment.OnTellJokeListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,15 +44,9 @@ public class MainActivity extends AppCompatActivity implements EndpointsAsyncTas
         return super.onOptionsItemSelected(item);
     }
 
-    // Get joke from GCE
-    public void tellJoke(View view) {
-        new EndpointsAsyncTask(this).execute();
-    }
-
 
     @Override
-    // Once the joke is retrieved from GCE, call the Displayer lib to display the joke
-    public void processResult(String result) {
+    public void onReturnJoke(String result) {
         Intent intent = new Intent();
         intent.setClass(this, JokesDisplayerActivity.class);
         intent.putExtra(Constants.Extra.EXTRA_JOKE, result);
