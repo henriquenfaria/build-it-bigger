@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$/android-jokes-displayer" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/java-jokes-provider" />
+            <option value="$PROJECT_DIR$/jokes-backend" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
