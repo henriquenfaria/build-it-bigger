@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements EndpointsAsyncTas
 
     // Get joke from GCE
     public void tellJoke(View view) {
-        new EndpointsAsyncTask(this).execute(this);
+        new EndpointsAsyncTask(this).execute();
     }
 
 

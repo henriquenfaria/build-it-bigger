@@ -1,7 +1,6 @@
 package com.udacity.gradle.builditbigger.sync;
 
 
-import android.content.Context;
 import android.os.AsyncTask;
 
 import com.example.jokesbackend.myApi.MyApi;
@@ -13,9 +12,8 @@ import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
 import java.io.IOException;
 
 
-public class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
+public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
     private static MyApi mMyApiService;
-    private Context mContext;
     public AsyncResponse delegate;
 
     public interface AsyncResponse {
@@ -28,7 +26,7 @@ public class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
     }
 
     @Override
-    protected String doInBackground(Context... params) {
+    protected String doInBackground(Void... params) {
         if(mMyApiService == null) {  // Only do this once
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
                     new AndroidJsonFactory(), null)
@@ -46,8 +44,6 @@ public class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
 
             mMyApiService = builder.build();
         }
-
-        mContext = params[0];
 
 
         try {
