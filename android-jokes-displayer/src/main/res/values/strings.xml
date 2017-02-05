@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">android-jokes-container</string>
+    <string name="joke_not_found">Joke not found...</string>
 </resources>

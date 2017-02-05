@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+    <RelativeLayout
+        android:id="@+id/joke_border"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/border_margin"
+        android:background="@drawable/custom_border"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/joke_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/joke_margin"
+            android:gravity="center"
+            android:textSize="@dimen/joke_text_size"/>
+    </RelativeLayout>
+</RelativeLayout>
