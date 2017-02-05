@@ -1,4 +1,4 @@
-package com.udacity.gradle.builditbigger;
+package com.udacity.gradle.builditbigger.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,10 +9,11 @@ import android.view.View;
 
 import com.example.androidjokesdisplayer.activity.JokesDisplayerActivity;
 import com.example.androidjokesdisplayer.utils.Constants;
-import com.example.javajokesprovider.JokesProvider;
+import com.udacity.gradle.builditbigger.R;
+import com.udacity.gradle.builditbigger.sync.EndpointsAsyncTask;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements EndpointsAsyncTask.AsyncResponse {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,12 +44,18 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    // Get joke from GCE
     public void tellJoke(View view) {
-        Intent intent = new Intent();
-        intent.setClass(this, JokesDisplayerActivity.class);
-        intent.putExtra(Constants.Extra.EXTRA_JOKE, JokesProvider.getJoke());
-        startActivity(intent);
+        new EndpointsAsyncTask(this).execute(this);
     }
 
 
+    @Override
+    // Once the joke is retrieved from GCE, call the Displayer lib to display the joke
+    public void processResult(String result) {
+        Intent intent = new Intent();
+        intent.setClass(this, JokesDisplayerActivity.class);
+        intent.putExtra(Constants.Extra.EXTRA_JOKE, result);
+        startActivity(intent);
+    }
 }
