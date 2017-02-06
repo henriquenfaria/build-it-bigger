@@ -11,12 +11,12 @@
     <Button
         android:id="@+id/tellJokeButton"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:textColor="@android:color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="@string/button_text"/>
+        android:text="@string/button_text"
+        android:textColor="@android:color/black"/>
 
 
     <ProgressBar
