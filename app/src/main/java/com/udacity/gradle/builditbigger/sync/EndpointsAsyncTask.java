@@ -2,6 +2,7 @@ package com.udacity.gradle.builditbigger.sync;
 
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import com.example.jokesbackend.myApi.MyApi;
 import com.google.api.client.extensions.android.http.AndroidHttp;
@@ -14,6 +15,7 @@ import java.io.IOException;
 
 
 public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
+    private static final String LOG_TAG = EndpointsAsyncTask.class.getSimpleName();
     private static MyApi mMyApiService;
     public AsyncResponse delegate;
 
@@ -22,13 +24,13 @@ public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
     }
 
 
-    public EndpointsAsyncTask(AsyncResponse delegate){
+    public EndpointsAsyncTask(AsyncResponse delegate) {
         this.delegate = delegate;
     }
 
     @Override
     protected String doInBackground(Void... params) {
-        if(mMyApiService == null) {  // Only do this once
+        if (mMyApiService == null) {  // Only do this once
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
                     new AndroidJsonFactory(), null)
                     // options for running against local devappserver
@@ -37,12 +39,13 @@ public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
                     .setRootUrl(BuildConfig.MY_IP_ADDRESS)
                     .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
                         @Override
-                        public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientRequest) throws IOException {
+                        public void initialize(AbstractGoogleClientRequest<?>
+                                                       abstractGoogleClientRequest) throws
+                                IOException {
                             abstractGoogleClientRequest.setDisableGZipContent(true);
                         }
                     });
             // end options for devappserver
-
             mMyApiService = builder.build();
         }
 
@@ -50,7 +53,9 @@ public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
         try {
             return mMyApiService.getJoke().execute().getData();
         } catch (IOException e) {
-            return e.getMessage();
+            Log.d(LOG_TAG, "Something wrong with the gce backend");
+            e.printStackTrace();
+            return null;
         }
     }
 

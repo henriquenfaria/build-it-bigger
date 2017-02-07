@@ -4,7 +4,6 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -60,7 +59,6 @@ public class BaseJokeFragment extends Fragment implements EndpointsAsyncTask.Asy
     @Override
     public void processResult(String result) {
         // Hide progress bar
-        Log.d("HNFTEST", "hiding");
         setProgressBarVisibility(false);
         setTellJokeButtonEnabled(true);
         mIsTaskRunning = false;
