@@ -20,6 +20,15 @@ Screens
 ![alt text](https://github.com/henriquenfaria/stock-hawk/blob/master/art/tablet_landscape_app.png "Tablet")
 
 
+Instructions
+------
+The code Google Cloud Endpoint is already configured to run properly on a Android Virtual Device. You just need to run the jokes-backend and run the app. If want to test it on a real device, please follow the instructions below:
+
+1. Create a gradle.properties file inside your user's gradle file. On Windows, this is usually located at: `C:\Users\Username\.gradle` (replace Username path with your Windows user).
+2. Edit this file and put the following line: `MyIpAddress="http://IP-ADDRESS:8080/_ah/api/"`
+3. Replace the IP-ADDRESS part with the IP addres your real devices is connected to. For example: 192.168.0.105
+4. Save the file and restart/run jokes-backend
+
 Libraries
 ------
 
