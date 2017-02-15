@@ -15,9 +15,8 @@ The finished app consists of 4 modules:
 Screens
 ------
 
-![alt text](https://github.com/henriquenfaria/stock-hawk/blob/master/art/phone_portrait_app.png "Phone")
-![alt text](https://github.com/henriquenfaria/stock-hawk/blob/master/art/phone_portrait_widget.png "Widget")
-![alt text](https://github.com/henriquenfaria/stock-hawk/blob/master/art/tablet_landscape_app.png "Tablet")
+![alt text](https://github.com/henriquenfaria/build-it-bigger/blob/master/art/main.png "Main")
+![alt text](https://github.com/henriquenfaria/build-it-bigger/blob/master/art/joke.png "Joke")
 
 
 Instructions
