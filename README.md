@@ -33,7 +33,7 @@ Libraries
 
 This project uses the following library:
 
-[FindBugs Jsr305] (https://mvnrepository.com/artifact/com.google.code.findbugs/jsr305)
+[FindBugs Jsr305](https://mvnrepository.com/artifact/com.google.code.findbugs/jsr305)
 
 
 License
