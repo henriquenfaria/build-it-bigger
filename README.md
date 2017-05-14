@@ -2,7 +2,7 @@ Build It Bigger
 ======
 
 This is Build It Bigger project of Udacity's Android Developer Nanodegree.
-The purpose of this project was to built an app with multiple flavors that uses multiple libraries and Google Cloud Endpoint.
+The purpose of this project was to build an app with multiple flavors that uses multiple libraries and Google Cloud Endpoint.
 
 The finished app consists of 4 modules:
 
